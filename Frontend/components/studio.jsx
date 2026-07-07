@@ -106,8 +106,8 @@ export default function Studio({
       const isUpdate = activeDraftId && !activeDraftId.startsWith("draft_");
 
       const url = isUpdate
-        ? `http://localhost:5000/api/documents/${activeDraftId}`
-        : "http://localhost:5000/api/documents";
+        ? `https://law-client.onrender.com/api/documents/${activeDraftId}`
+        : "https://law-client.onrender.com/api/documents";
 
       const method = isUpdate ? "PUT" : "POST";
 
@@ -159,7 +159,7 @@ export default function Studio({
 
   async function loadDocuments() {
     try {
-      const res = await fetch("http://localhost:5000/api/documents");
+      const res = await fetch("https://law-client.onrender.com/api/documents");
 
       if (!res.ok) {
         setBackendAvailable(false);
@@ -186,7 +186,7 @@ export default function Studio({
   async function openDocument(doc) {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/documents/${doc._id}`,
+        `https://law-client.onrender.com/api/documents/${doc._id}`,
       );
 
       const result = await res.json();
@@ -222,7 +222,7 @@ export default function Studio({
     if (!confirmed) return;
 
     try {
-      await fetch(`http://law-client.onrender.com/api/documents/${id}`, {
+      await fetch(`https://law-client.onrender.com/api/documents/${id}`, {
         method: "DELETE",
       });
 
