@@ -99,7 +99,7 @@ export default function Studio({
     initialBackendAvailable,
   );
 
-  // create document
+  // create documents
 
   async function saveAggrement() {
     try {
